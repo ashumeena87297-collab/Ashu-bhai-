@@ -1,118 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Telegram Landing Page</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial;
-  background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
-  color: white;
-  text-align: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-.container {
-  padding: 20px;
+body{
+    background:#d8d2d2;
+    font-family:Arial, sans-serif;
+    padding:20px;
 }
 
-h1 {
-  color: #00e6ff;
-  font-size: 28px;
+.container{
+    max-width:500px;
+    margin:auto;
+    background:#fff;
+    border:4px solid #1a33ff;
+    border-radius:30px;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 0 15px rgba(0,0,0,0.2);
 }
 
-h2 {
-  font-size: 22px;
-  margin-bottom: 20px;
+.dp{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    border:6px solid #0066ff;
+    object-fit:cover;
+    margin-bottom:20px;
 }
 
-.card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 15px;
-  padding: 15px;
-  margin: 15px 0;
+.box{
+    border:4px solid #1a33ff;
+    border-radius:25px;
+    padding:20px;
+    margin-bottom:25px;
+    font-weight:bold;
+    font-size:22px;
+    line-height:1.8;
 }
 
-.profile img {
-  width: 130px;
-  height: 130px;
-  border-radius: 15px;
-  border: 3px solid #00e6ff;
-  object-fit: cover;
+.telegram-btn{
+    display:block;
+    background:#0d84e8;
+    color:white;
+    text-decoration:none;
+    font-size:28px;
+    font-weight:bold;
+    padding:25px;
+    border-radius:25px;
+    margin:20px 0;
+    box-shadow:0 5px 15px rgba(0,0,0,0.3);
 }
 
-.badge {
-  background: linear-gradient(to right,#00c6ff,#0072ff);
-  padding: 8px 15px;
-  border-radius: 20px;
-  display: inline-block;
-  margin-top: 10px;
+.telegram-btn:hover{
+    background:#006fd6;
 }
 
-.followers {
-  font-size: 22px;
-  color: #00e6ff;
+.text-box{
+    border:4px solid #1a33ff;
+    border-radius:25px;
+    padding:20px;
+    margin-top:20px;
+    font-size:18px;
+    font-weight:bold;
+    line-height:1.8;
 }
 
-.join-btn {
-  display: block;
-  margin: 25px auto;
-  padding: 18px;
-  width: 90%;
-  max-width: 400px;
-  font-size: 20px;
-  text-decoration: none;
-  color: white;
-  border-radius: 10px;
-  background: linear-gradient(to right,#00c6ff,#6a00ff);
-  font-weight: bold;
-}
-
-.section {
-  background: rgba(0,0,0,0.4);
-  padding: 15px;
-  border-radius: 10px;
-  margin: 15px 0;
-}
 </style>
-
 </head>
+
 <body>
 
 <div class="container">
 
-<h1>BAAZIGAR VIP MATKA</h1>
-<h2>ALL MARKET FREE GAME</h2>
+    <!-- DP -->
+    <img src="dp.jpg" alt="Profile" class="dp">
 
-<div class="card profile">
-  <img src="https://raw.githubusercontent.com/ashumeena87297-collab/Ashu-bhai-/main/photo.jpg">
+    <!-- Top Box -->
+    <div class="box">
+        @ कल्याण @ टाइम बाजार @ श्रीदेवी @ मिलन डे <br>
+        @ कल्याण नाइट @ राजधानी नाइट @ मेन बाजार
+    </div>
 
-  <div class="badge">⭐ OFFICIAL CHANNEL</div>
-  <div class="followers">100K+ FOLLOWERS</div>
-</div>
+    <!-- Telegram Button -->
+    <a href="https://t.me/+T8dGcIkDG3FkYTA1" target="_blank" class="telegram-btn">
+        🚀 JOIN TELEGRAM CHANNEL 🚀
+    </a>
 
-<!-- 🔥 TELEGRAM BUTTON WITH YOUR LINK -->
-<a href="https://t.me/+zJxXnEznszw2OWU1" class="join-btn">
-🚀 JOIN TELEGRAM CHANNEL
-</a>
+    <!-- Middle Text -->
+    <div class="text-box">
+        FIX OPEN, FIX JODI, AND FIX PANEL ✅<br>
+        ALL MATKA GAME AVAILABLE 👌<br>
+        DAILY 5-7 GAME PASS BY OUR EXPERT 👍<br>
+        ✅ 1001% GAME KI GUARANTEE ✅
+    </div>
 
-<div class="section">
-  @ कल्याण @ श्रीदेवी @ टाइम बाजार <br>
-  @ मिलन नाइट @ कल्याण नाइट @ मेन बाजार
-</div>
+    <!-- Telegram Button -->
+    <a href="https://t.me/+T8dGcIkDG3FkYTA1" target="_blank" class="telegram-btn">
+        🚀 JOIN TELEGRAM CHANNEL 🚀
+    </a>
 
-<div class="section">
-  Satka matka mein 100% bada paisa jitna chahte ho to  
-  Hamara telegram channel join karein  
-  Aaj hi bilkul free game milega
-</div>
-
-<div class="section">
-  <b>India's best SATTA MATKA CHANNEL</b><br>
-  सटका मटका हेड ऑफिस मुंबई महाराष्ट्र
-</div>
+    <!-- Bottom Text -->
+    <div class="text-box">
+        Satka Matka Mein 100% Bada Paisa Jitna Chahte Ho To Hamara Telegram Channel Join Karen.<br>
+        Aaj Hi Bilkul Free Game Milega.
+    </div>
 
 </div>
 
