@@ -1,1 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank Nifty Expert</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: #000;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+  }
+
+  .card-container {
+    background: linear-gradient(180deg, #0d3b26 0%, #061f13 100%);
+    width: 100%;
+    max-width: 400px;
+    border-radius: 24px;
+    padding: 24px 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    color: #fff;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  /* Avatar Section */
+  .avatar-wrapper {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px auto;
+  }
+
+  .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #1a233a, #0d111d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 800;
+    color: #a4b4cb;
+    box-shadow: 0 0 20px rgba(0, 230, 118, 0.4);
+    border: 2px solid #1f2e26;
+  }
+
+  /* Typography */
+  h1 {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+  }
+
+  h1 .highlight {
+    color: #00e676;
+  }
+
+  .subtitle {
+    font-size: 13px;
+    color: #a3b8b0;
+    line-height: 1.5;
+    margin-bottom: 24px;
+    padding: 0 10px;
+  }
+
+  /* Stats Row */
+  .stats-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .stat-box {
+    flex: 1;
+    background: rgba(0, 230, 118, 0.05);
+    border: 1px solid rgba(0, 230, 118, 0.1);
+    border-radius: 12px;
+    padding: 12px 5px;
+  }
+
+  .stat-value {
+    color: #00e676;
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 4px;
+  }
+
+  .stat-label {
+    color: #a3b8b0;
+    font-size: 11px;
+    font-weight: 600;
+  }
+
+  /* Features Grid */
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .grid-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  /* CTA Button */
+  .cta-btn {
+    background: #00e676;
+    color: #000;
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 800;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 15px rgba(0, 230, 118, 0.2);
+  }
+
+  /* List Card */
+  .list-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 16px;
+    text-align: left;
+    margin-bottom: 20px;
+  }
+
+  .list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 13px;
+    color: #e0e0e0;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  
+  .list-item:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Ad Banner */
+  .ad-banner {
+    background: linear-gradient(90deg, #7a28ff, #ff238d);
+    border-radius: 12px;
+    padding: 14px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 4px 15px rgba(255, 35, 141, 0.3);
+  }
+
+  .ad-banner span.brand {
+    color: #00ffff;
+  }
+</style>
+</head>
+<body>
+
+<div class="card-container">
+  <div class="avatar-wrapper">
+    <div class="avatar">
+      BankNifty
+    </div>
+  </div>
+
+  <h1>BANK NIFTY <span class="highlight">EXPERT</span></h1>
+  <div class="subtitle">
+    Fast & Accurate Market Analysis • Nifty •<br>Bank Nifty • Options Trading
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-box">
+      <div class="stat-value">60K+</div>
+      <div class="stat-label">Members</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">SEBI</div>
+      <div class="stat-label">Registered</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-value">FREE</div>
+      <div class="stat-label">Join</div>
+    </div>
+  </div>
+
+  <div class="features-grid">
+    <div class="grid-item">📉 Nifty Calls</div>
+    <div class="grid-item">🏦 Bank Nifty</div>
+    <div class="grid-item">💹 Finnifty</div>
+    <div class="grid-item">📊 Swing Trades</div>
+  </div>
+
+  <button class="cta-btn">
+    🚀 JOIN TELEGRAM FREE
+  </button>
+
+  <div class="list-card">
+    <div class="list-item">
+      <span>🔥</span>
+      <span>Daily Market Research & High Probability Trade Setups</span>
+    </div>
+    <div class="list-item">
+      <span>⚡</span>
+      <span>Bank Nifty • Nifty • Options Trading Signals</span>
+    </div>
+    <div class="list-item">
+      <span>🚀</span>
+      <span>Trusted by 60,000+ Traders</span>
+    </div>
+  </div>
+
+  <div class="ad-banner">
+    🔥 Ads by <span class="brand">ADSBUID AGENCY</span> 🚀 Instant Growth
+  </div>
+</div>
+
+</body>
+</html>
