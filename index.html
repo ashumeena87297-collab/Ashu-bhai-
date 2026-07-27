@@ -5,392 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>King Of Nifty - Dr. Vikas Laddha</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    }
-
-    body {
-      background-color: #0b0f19;
-      color: #ffffff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      padding-bottom: 40px;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body { background-color: #0b0f19; color: #ffffff; display: flex; flex-direction: column; align-items: center; min-height: 100vh; padding-bottom: 40px; }
+    
     /* Live Ticker Bar */
-    .ticker-bar {
-      width: 100%;
-      background-color: #161b22;
-      border-bottom: 1px solid #232d3f;
-      padding: 8px 12px;
-      display: flex;
-      align-items: center;
-      font-size: 12px;
-      color: #8b949e;
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .ticker-status {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-weight: 600;
-      color: #00e676;
-      margin-right: 15px;
-      flex-shrink: 0;
-    }
-
-    .ticker-dot {
-      width: 8px;
-      height: 8px;
-      background-color: #00e676;
-      border-radius: 50%;
-      box-shadow: 0 0 8px #00e676;
-    }
-
-    .ticker-marquee {
-      display: inline-block;
-      white-space: nowrap;
-      animation: marquee 25s linear infinite;
-    }
-
-    .ticker-item {
-      display: inline-block;
-      margin-right: 25px;
-      color: #c9d1d9;
-    }
-
-    .ticker-item span {
-      color: #00e676;
-      font-weight: bold;
-    }
-
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
-    }
+    .ticker-bar { width: 100%; background-color: #161b22; border-bottom: 1px solid #232d3f; padding: 8px 12px; display: flex; align-items: center; font-size: 12px; color: #8b949e; overflow: hidden; white-space: nowrap; }
+    .ticker-status { display: flex; align-items: center; gap: 6px; font-weight: 600; color: #00e676; margin-right: 15px; flex-shrink: 0; }
+    .ticker-dot { width: 8px; height: 8px; background-color: #00e676; border-radius: 50%; box-shadow: 0 0 8px #00e676; }
+    .ticker-marquee { display: inline-block; white-space: nowrap; animation: marquee 25s linear infinite; }
+    .ticker-item { display: inline-block; margin-right: 25px; color: #c9d1d9; }
+    .ticker-item span { color: #00e676; font-weight: bold; }
+    @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
     /* Main Container */
-    .container {
-      width: 100%;
-      max-width: 480px;
-      padding: 20px 16px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
+    .container { width: 100%; max-width: 480px; padding: 20px 16px; display: flex; flex-direction: column; align-items: center; }
 
-    /* Redirect Banner / Alert */
-    .redirect-banner {
-      width: 100%;
-      background: linear-gradient(135deg, rgba(0, 230, 118, 0.15), rgba(22, 30, 46, 1));
-      border: 1px solid #00e676;
-      border-radius: 12px;
-      padding: 14px 16px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .redirect-banner h3 {
-      font-size: 16px;
-      color: #00e676;
-      margin-bottom: 4px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-
-    .redirect-banner p {
-      font-size: 13px;
-      color: #b0bec5;
-      margin-bottom: 10px;
-    }
-
-    .redirect-banner a {
-      display: inline-block;
-      background-color: #00e676;
-      color: #0b0f19;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 13px;
-      padding: 8px 16px;
-      border-radius: 6px;
-    }
+    /* Redirect Banner */
+    .redirect-banner { width: 100%; background: linear-gradient(135deg, rgba(0, 230, 118, 0.15), rgba(22, 30, 46, 1)); border: 1px solid #00e676; border-radius: 12px; padding: 14px 16px; margin-bottom: 20px; text-align: center; }
+    .redirect-banner h3 { font-size: 16px; color: #00e676; margin-bottom: 4px; }
+    .redirect-banner p { font-size: 13px; color: #b0bec5; margin-bottom: 10px; }
+    .redirect-banner a { display: inline-block; background-color: #00e676; color: #0b0f19; text-decoration: none; font-weight: bold; font-size: 13px; padding: 8px 16px; border-radius: 6px; }
 
     /* Logo & Profile */
-    .logo-container {
-      position: relative;
-      margin-bottom: 12px;
-    }
-
-    .logo-img {
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid #00e676;
-      box-shadow: 0 0 20px rgba(0, 230, 118, 0.3);
-    }
-
-    .title {
-      font-size: 26px;
-      font-weight: 800;
-      color: #ffffff;
-      margin-bottom: 2px;
-      text-align: center;
-    }
-
-    .title span {
-      color: #00e676;
-    }
-
-    .author-name {
-      font-size: 16px;
-      font-weight: 600;
-      color: #c9d1d9;
-      margin-bottom: 4px;
-    }
-
-    .tagline {
-      font-size: 12px;
-      color: #8b949e;
-      margin-bottom: 16px;
-      letter-spacing: 0.5px;
-    }
+    .logo-img { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; border: 3px solid #00e676; box-shadow: 0 0 20px rgba(0, 230, 118, 0.3); margin-bottom: 12px; }
+    .title { font-size: 26px; font-weight: 800; color: #ffffff; text-align: center; }
+    .title span { color: #00e676; }
+    .author-name { font-size: 16px; font-weight: 600; color: #c9d1d9; margin-bottom: 4px; }
+    .tagline { font-size: 12px; color: #8b949e; margin-bottom: 16px; }
 
     /* Expert Info Box */
-    .expert-box {
-      width: 100%;
-      background-color: #161e2e;
-      border: 1px solid #232d3f;
-      border-radius: 12px;
-      padding: 12px 16px;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
+    .expert-box { width: 100%; background-color: #161e2e; border: 1px solid #232d3f; border-radius: 12px; padding: 12px 16px; display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+    .expert-title { font-weight: 700; font-size: 14px; color: #ffffff; }
+    .expert-desc { font-size: 12px; color: #8b949e; }
 
-    .expert-icon {
-      font-size: 28px;
-    }
-
-    .expert-text {
-      text-align: left;
-    }
-
-    .expert-title {
-      font-weight: 700;
-      font-size: 14px;
-      color: #ffffff;
-    }
-
-    .expert-desc {
-      font-size: 12px;
-      color: #8b949e;
-      line-height: 1.4;
-    }
-
-    /* Main CTA Button */
-    .cta-button {
-      width: 100%;
-      background: linear-gradient(180deg, #229ed9 0%, #1d82b3 100%);
-      color: #ffffff;
-      text-decoration: none;
-      padding: 16px;
-      border-radius: 12px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 4px 15px rgba(34, 158, 217, 0.4);
-      transition: transform 0.2s, box-shadow 0.2s;
-      margin-bottom: 10px;
-    }
-
-    .cta-button:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(34, 158, 217, 0.6);
-    }
-
-    .cta-title {
-      font-size: 18px;
-      font-weight: 800;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .cta-subtitle {
-      font-size: 12px;
-      opacity: 0.9;
-      font-weight: 400;
-      margin-top: 2px;
-    }
+    /* CTA Button */
+    .cta-button { width: 100%; background: linear-gradient(180deg, #229ed9 0%, #1d82b3 100%); color: #ffffff; text-decoration: none; padding: 16px; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 4px 15px rgba(34, 158, 217, 0.4); margin-bottom: 10px; }
+    .cta-title { font-size: 18px; font-weight: 800; }
+    .cta-subtitle { font-size: 12px; opacity: 0.9; }
 
     /* Timer */
-    .timer-box {
-      font-size: 13px;
-      color: #ff5252;
-      font-weight: 600;
-      margin-bottom: 24px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
+    .timer-box { font-size: 13px; color: #ff5252; font-weight: 600; margin-bottom: 24px; }
+    .timer-seconds { background: rgba(255, 82, 82, 0.15); padding: 2px 6px; border-radius: 4px; border: 1px solid rgba(255, 82, 82, 0.3); }
 
-    .timer-seconds {
-      background: rgba(255, 82, 82, 0.15);
-      padding: 2px 6px;
-      border-radius: 4px;
-      border: 1px solid rgba(255, 82, 82, 0.3);
-    }
-
-    /* Stats Grid */
-    .stats-grid {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-
-    .stat-card {
-      background-color: #161e2e;
-      border: 1px solid #232d3f;
-      border-radius: 10px;
-      padding: 12px 8px;
-      text-align: center;
-    }
-
-    .stat-val {
-      font-size: 18px;
-      font-weight: 800;
-      color: #00e676;
-    }
-
-    .stat-lbl {
-      font-size: 11px;
-      color: #8b949e;
-      margin-top: 2px;
-    }
-
-    /* Feature Section */
-    .section-label {
-      width: 100%;
-      text-align: left;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      color: #8b949e;
-      letter-spacing: 0.8px;
-      margin-bottom: 12px;
-    }
-
-    .cards-container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-
-    .feature-card {
-      background-color: #161e2e;
-      border: 1px solid #232d3f;
-      border-radius: 12px;
-      padding: 14px 16px;
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      text-align: left;
-    }
-
-    .feature-icon {
-      font-size: 22px;
-      line-height: 1;
-    }
-
-    .feature-content {
-      flex: 1;
-    }
-
-    .feature-title {
-      font-size: 15px;
-      font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 4px;
-    }
-
-    .feature-desc {
-      font-size: 12.5px;
-      color: #b0bec5;
-      line-height: 1.4;
-    }
-
-    .highlight-card {
-      background: linear-gradient(135deg, rgba(0, 230, 118, 0.12), rgba(22, 30, 46, 1));
-      border: 1px solid #00e676;
-    }
-
-    .highlight-card .feature-title {
-      color: #00e676;
-    }
-
-    /* Ads Tag */
-    .ads-tag {
-      font-size: 12px;
-      color: #8b949e;
-      margin-bottom: 20px;
-    }
-
-    .ads-tag a {
-      color: #80d8ff;
-      text-decoration: none;
-    }
+    /* Features List */
+    .cards-container { width: 100%; display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+    .feature-card { background-color: #161e2e; border: 1px solid #232d3f; border-radius: 12px; padding: 14px 16px; display: flex; gap: 12px; text-align: left; }
+    .feature-title { font-size: 15px; font-weight: 700; color: #ffffff; }
+    .feature-desc { font-size: 12.5px; color: #b0bec5; }
 
     /* Footer Links & Disclaimer */
-    .footer-links {
-      display: flex;
-      gap: 15px;
-      margin-bottom: 12px;
-    }
-
-    .footer-links a {
-      color: #80d8ff;
-      font-size: 12px;
-      text-decoration: none;
-    }
-
-    .disclaimer-text {
-      font-size: 11px;
-      color: #607d8b;
-      line-height: 1.5;
-      text-align: center;
-    }
+    .footer-links { display: flex; gap: 15px; margin-bottom: 12px; }
+    .footer-links a { color: #80d8ff; font-size: 12px; text-decoration: none; }
+    .disclaimer-text { font-size: 11px; color: #607d8b; text-align: center; line-height: 1.5; }
   </style>
 </head>
 <body>
 
   <!-- Live Market Ticker -->
   <div class="ticker-bar">
-    <div class="ticker-status">
-      <div class="ticker-dot"></div> NSE · BSE · MCX Live
-    </div>
+    <div class="ticker-status"><div class="ticker-dot"></div> NSE · BSE · MCX Live</div>
     <div style="overflow: hidden; width: 100%;">
       <div class="ticker-marquee">
-        <div class="ticker-item">NIFTY 50 <span>24,850 ▲ +0.65%</span></div>
-        <div class="ticker-item">BANKNIFTY <span>52,400 ▲ +0.82%</span></div>
-        <div class="ticker-item">SENSEX <span>81,300 ▲ +0.55%</span></div>
-        <div class="ticker-item">GOLD MCX <span>74,200 ▲ +0.30%</span></div>
-        <div class="ticker-item">RELIANCE <span>3,020 ▲ +1.10%</span></div>
         <div class="ticker-item">NIFTY 50 <span>24,850 ▲ +0.65%</span></div>
         <div class="ticker-item">BANKNIFTY <span>52,400 ▲ +0.82%</span></div>
         <div class="ticker-item">SENSEX <span>81,300 ▲ +0.55%</span></div>
@@ -404,29 +79,26 @@
     <div class="redirect-banner">
       <h3>📈 You're In!</h3>
       <p>Taking you to <strong>King Of Nifty</strong> on Telegram.<br>Your free access is ready.</p>
-      <a href="https://t.me/+z4CcUefgqjtiYmI0" target="_blank">Open Telegram Now →</a>
+      <a href="#" class="tg-link" target="_blank">Open Telegram Now →</a>
     </div>
 
     <!-- Profile Logo & Title -->
-    <div class="logo-container">
-      <img src="https://cdn4.telesco.pe/file/Js0pGaY84SVH8c5_DZ2GvQzqWgX0nbWidlwJayx00zg3PuGpkxoWA2gbM3vOdCDAnnywpIbCYhsrwSYdkqVqrHsbyhNBc_WaGoX1E3FIN38-J86qF2r2X34w-QA9NSVOhil-4q5vIURbHurmHRU0Uzo73Wu15akTQnFrJSi6IKJohQDLfS8webvtcWXS8S5Itc5hi-zRNljyI4Q5Al46GnAhIYilBcuCQ_muKC0HZ7EpcFe8S1u9e5ri5tEQTtP7bSSE_E0mDfCRaYOlk4cPBlxsuZX26Y86VXi1cWwmdoyaKS1eV-_Y0_NcLRz2mZVDiptJ09fab7qXXkuUv73KxQ.jpg" alt="King Of Nifty Logo" class="logo-img">
-    </div>
+    <img src="https://cdn4.telesco.pe/file/Js0pGaY84SVH8c5_DZ2GvQzqWgX0nbWidlwJayx00zg3PuGpkxoWA2gbM3vOdCDAnnywpIbCYhsrwSYdkqVqrHsbyhNBc_WaGoX1E3FIN38-J86qF2r2X34w-QA9NSVOhil-4q5vIURbHurmHRU0Uzo73Wu15akTQnFrJSi6IKJohQDLfS8webvtcWXS8S5Itc5hi-zRNljyI4Q5Al46GnAhIYilBcuCQ_muKC0HZ7EpcFe8S1u9e5ri5tEQTtP7bSSE_E0mDfCRaYOlk4cPBlxsuZX26Y86VXi1cWwmdoyaKS1eV-_Y0_NcLRz2mZVDiptJ09fab7qXXkuUv73KxQ.jpg" alt="Logo" class="logo-img">
 
     <h1 class="title">King Of <span>Nifty</span></h1>
     <div class="author-name">Dr. Vikas Laddha</div>
     <div class="tagline">// India's #1 Stock Market Expert</div>
 
-    <!-- SEBI Analyst Info Box -->
     <div class="expert-box">
-      <div class="expert-icon">👨‍⚕️</div>
-      <div class="expert-text">
+      <div style="font-size: 28px;">👨‍⚕️</div>
+      <div>
         <div class="expert-title">Dr. Vikas Laddha</div>
-        <div class="expert-desc">SEBI Registered Analyst · 15+ Years Market Experience · Nifty & BankNifty Specialist</div>
+        <div class="expert-desc">SEBI Registered Analyst · 15+ Years Market Experience</div>
       </div>
     </div>
 
     <!-- Main Telegram CTA Button -->
-    <a href="https://t.me/+z4CcUefgqjtiYmI0" class="cta-button" target="_blank">
+    <a href="#" class="cta-button tg-link" target="_blank">
       <div class="cta-title">🚀 Join King Of Nifty — Free</div>
       <div class="cta-subtitle">Instant Telegram access · No charges</div>
     </a>
@@ -436,99 +108,53 @@
       ⏳ Free joining ends in: <span class="timer-seconds" id="timer">00:10</span>
     </div>
 
-    <!-- Stats Row -->
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-val">5/5</div>
-        <div class="stat-lbl">Today's Calls</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-val">FREE</div>
-        <div class="stat-lbl">No Cost</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-val">15+</div>
-        <div class="stat-lbl">Yrs Exp.</div>
-      </div>
-    </div>
-
-    <!-- Features List -->
-    <div class="section-label">What You Get</div>
-
     <div class="cards-container">
       <div class="feature-card">
-        <div class="feature-icon">📊</div>
-        <div class="feature-content">
+        <div style="font-size: 22px;">📊</div>
+        <div>
           <div class="feature-title">Nifty & BankNifty Calls</div>
           <div class="feature-desc">Daily index options calls with precise entry, target & stop-loss</div>
         </div>
       </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">🎯</div>
-        <div class="feature-content">
-          <div class="feature-title">Intraday Stock Tips</div>
-          <div class="feature-desc">NSE/BSE top picks every morning before market opens</div>
-        </div>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">📉</div>
-        <div class="feature-content">
-          <div class="feature-title">Option Chain Analysis</div>
-          <div class="feature-desc">PCR, OI buildup & IV analysis for high-accuracy trades</div>
-        </div>
-      </div>
-
-      <div class="feature-card">
-        <div class="feature-icon">🛡️</div>
-        <div class="feature-content">
-          <div class="feature-title">Risk Management</div>
-          <div class="feature-desc">Capital protection strategy with every single call</div>
-        </div>
-      </div>
-
-      <div class="feature-card highlight-card">
-        <div class="feature-icon">🏆</div>
-        <div class="feature-content">
-          <div class="feature-title">5/5 Calls in Profit Today</div>
-          <div class="feature-desc">All 5 Nifty & BankNifty calls closed green today. Track record updated daily — verified, transparent, consistent.</div>
-        </div>
-      </div>
     </div>
 
-    <!-- Agency Credit -->
-    <div class="ads-tag">
-      📢 Ads by <a href="https://wa.link/y2913g" target="_blank">Metamind Agency — Contact for Ads</a>
-    </div>
-
-    <!-- Footer Links -->
     <div class="footer-links">
       <a href="https://forexmind.online/terms-conditions/" target="_blank">Terms</a>
       <a href="https://forexmind.online/disclaimer/" target="_blank">Disclaimer</a>
       <a href="https://forexmind.online/privacy-policy/" target="_blank">Privacy</a>
     </div>
 
-    <!-- Legal Disclaimer -->
     <p class="disclaimer-text">
-      For educational purposes only. SEBI Registration does not guarantee returns. Stock market investments are subject to market risks. Please read all related documents carefully before investing.<br><br>
-      This site is not part of Facebook™ or Meta Platforms Inc. and is not endorsed by Facebook™.
+      For educational purposes only. Stock market investments are subject to market risks.
     </p>
 
   </div>
 
   <script>
-    // Live Countdown Timer JS
+    // -------------------------------------------------------------
+    // APNA TELEGRAM LINK YAHAN DAALEIN:
+    // -------------------------------------------------------------
+    const MY_TELEGRAM_LINK = "https://t.me/+z4CcUefgqjtiYmI0"; 
+
+    // Apply Link to All Buttons Automatically
+    document.querySelectorAll('.tg-link').forEach(button => {
+      button.href = MY_TELEGRAM_LINK;
+    });
+
+    // 10-Second Countdown & Auto-Redirect Script
     let seconds = 10;
     const timerElement = document.getElementById('timer');
     
-    setInterval(() => {
+    const countdown = setInterval(() => {
       seconds--;
-      if (seconds < 0) {
-        seconds = 10;
-      }
       const formattedSec = seconds < 10 ? '0' + seconds : seconds;
       timerElement.textContent = `00:${formattedSec}`;
+      
+      if (seconds <= 0) {
+        clearInterval(countdown);
+        // Auto Redirect to Telegram
+        window.location.href = MY_TELEGRAM_LINK; 
+      }
     }, 1000);
   </script>
 
