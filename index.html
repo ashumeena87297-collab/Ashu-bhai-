@@ -15,16 +15,16 @@
 
         body {
             font-family: 'Montserrat', sans-serif;
-            /* Background changing smoothly between Red, Blue, Yellow, and White/Light tones */
+            /* Color-changing background (Red, Blue, Yellow, White/Light tones) */
             background: linear-gradient(-45deg, #ff3333, #3366ff, #ffcc00, #f8fafc, #ff3333);
             background-size: 400% 400%;
             animation: gradientBG 12s ease infinite;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start; /* Up se start karne ke liye */
             min-height: 100vh;
             color: #ffffff;
-            padding: 20px;
+            padding: 10px 20px 20px 20px; /* Top spacing kam kar di hai */
         }
 
         @keyframes gradientBG {
@@ -34,17 +34,17 @@
         }
 
         .card {
-            /* Dark background for the card so text is clearly readable on colorful background */
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15, 23, 42, 0.92);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             border-radius: 24px;
-            padding: 35px 24px 25px;
+            padding: 30px 24px 22px;
             width: 100%;
             max-width: 420px;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             text-align: center;
             position: relative;
+            margin-top: 5px;
         }
 
         .badge {
@@ -56,41 +56,50 @@
             text-transform: uppercase;
             padding: 6px 14px;
             border-radius: 20px;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
             letter-spacing: 0.5px;
             background: rgba(255, 204, 0, 0.1);
         }
 
-        .title {
-            color: #ffcc00;
-            font-size: 2rem;
-            font-weight: 800;
-            line-height: 1.2;
+        /* Profile Picture Style with Yellow Border & Glow */
+        .profile-container {
             margin-bottom: 14px;
-            text-transform: uppercase;
-            text-shadow: 0 0 12px rgba(255, 204, 0, 0.6), 0 0 25px rgba(255, 204, 0, 0.2);
+            display: flex;
+            justify-content: center;
         }
 
-        .subtitle {
-            color: #cbd5e1;
-            font-size: 0.9rem;
-            font-weight: 500;
-            line-height: 1.4;
-            margin-bottom: 20px;
+        .profile-pic {
+            width: 95px;
+            height: 95px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3.5px solid #ffcc00;
+            box-shadow: 0 0 15px rgba(255, 204, 0, 0.6);
+        }
+
+        /* Name Styling where subtitle used to be */
+        .profile-name {
+            color: #ffcc00;
+            font-size: 1.5rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.5);
         }
 
         .divider {
             border: none;
             height: 1px;
             background-color: rgba(255, 255, 255, 0.15);
-            margin: 0 10px 24px 10px;
+            margin: 0 10px 20px 10px;
         }
 
         .features-container {
             display: flex;
             flex-direction: column;
-            gap: 14px;
-            margin-bottom: 28px;
+            gap: 12px;
+            margin-bottom: 24px;
             text-align: left;
             padding: 0 5px;
         }
@@ -99,7 +108,7 @@
             display: flex;
             align-items: center;
             background: rgba(255, 255, 255, 0.06);
-            padding: 11px 14px;
+            padding: 10px 14px;
             border-radius: 12px;
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
@@ -142,7 +151,7 @@
             font-weight: 800;
             cursor: pointer;
             font-family: 'Montserrat', sans-serif;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
             animation: borderBubble 2s infinite ease-in-out;
             transition: transform 0.1s ease;
         }
@@ -171,14 +180,20 @@
 <body>
 
     <div class="card">
+        <!-- Top Badge -->
         <div class="badge">India's Best Stock Market Channel</div>
 
-        <h1 class="title">Dr. Vikas Laddha</h1>
+        <!-- Profile Picture with Yellow Border -->
+        <div class="profile-container">
+            <img src="IMG_20250720_155619_451.jpg" alt="Dr. Vikas Laddha" class="profile-pic">
+        </div>
 
-        <p class="subtitle">Daily Accurate Calls | High Profit Potential</p>
+        <!-- Name Heading -->
+        <h2 class="profile-name">Dr. Vikas Laddha</h2>
 
         <hr class="divider">
 
+        <!-- Features List -->
         <div class="features-container">
             <div class="feature-row">
                 <span class="feature-icon">📊</span>
@@ -198,10 +213,12 @@
             </div>
         </div>
 
+        <!-- Telegram Button with Border Bubbling -->
         <button class="join-btn">
             JOIN OFFICIAL TELEGRAM CHANNEL
         </button>
 
+        <!-- Footer -->
         <p class="footer-text">
             <span class="verified-badge">✔ Verified Channel</span> • Free Forever • No Spam
         </p>
